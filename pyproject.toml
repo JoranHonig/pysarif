@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pysarif"
+name = "pydantic-sarif"
 version = "0.1.0"
 description = "A pydantic binding library for the sarif standard"
 authors = ["JoranHonig <JoranHonig@users.noreply.github.com>"]

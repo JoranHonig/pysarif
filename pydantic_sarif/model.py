@@ -1486,6 +1486,7 @@ class ThreadFlowLocation(BaseModel):
 class Exception(BaseModel):
     class Config:
         extra = Extra.forbid
+        arbitrary_types_allowed = True
 
     kind: Optional[str] = Field(
         None,

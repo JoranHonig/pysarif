@@ -1683,10 +1683,10 @@ class Result(BaseModel):
         description='A reference used to locate the rule descriptor relevant to this result.',
     )
     kind: Optional[Kind] = Field(
-        'fail', description='A value that categorizes results by evaluation state.'
+        Kind.fail, description='A value that categorizes results by evaluation state.'
     )
     level: Optional[Level] = Field(
-        'warning', description='A value specifying the severity level of the result.'
+        Level.warning, description='A value specifying the severity level of the result.'
     )
     message: Message = Field(
         ...,

@@ -83,7 +83,7 @@ class ReportingConfiguration(BaseModel):
         description='Specifies whether the report may be produced during the scan.',
     )
     level: Optional[Level] = Field(
-        'warning', description='Specifies the failure level for the report.'
+        Level.warning, description='Specifies the failure level for the report.'
     )
     rank: Optional[confloat(ge=-1.0, le=100.0)] = Field(
         -1.0,
@@ -914,7 +914,7 @@ class ToolComponent(BaseModel):
         description='The language of the messages emitted into the log file during this run (expressed as an ISO 639-1 two-letter lowercase language code) and an optional region (expressed as an ISO 3166-1 two-letter uppercase subculture code associated with a country or region). The casing is recommended but not required (in order for this data to conform to RFC5646).',
     )
     contents: Optional[List[Content]] = Field(
-        ['localizedData', 'nonLocalizedData'],
+        [Content.localizedData, Content.nonLocalizedData],
         description='The kinds of data contained in this object.',
     )
     isComprehensive: Optional[bool] = Field(
@@ -1683,10 +1683,10 @@ class Result(BaseModel):
         description='A reference used to locate the rule descriptor relevant to this result.',
     )
     kind: Optional[Kind] = Field(
-        'fail', description='A value that categorizes results by evaluation state.'
+        Kind.fail, description='A value that categorizes results by evaluation state.'
     )
     level: Optional[Level] = Field(
-        'warning', description='A value specifying the severity level of the result.'
+        Level.warning, description='A value specifying the severity level of the result.'
     )
     message: Message = Field(
         ...,
